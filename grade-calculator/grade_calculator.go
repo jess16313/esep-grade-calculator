@@ -84,7 +84,7 @@ func (gc *GradeCalculator) calculateNumericalGrade() int {
 
 	weighted_grade := float64(assignment_average)*.5 + float64(exam_average)*.35 + float64(essay_average)*.15
 
-	return int(weighted_grade)
+	return int(weighted_grade + 0.5)
 }
 
 func computeAverage(grades []Grade) int {
@@ -92,6 +92,10 @@ func computeAverage(grades []Grade) int {
 
 	for _, g := range grades {
 		sum += g.Grade
+	}
+
+	if len(grades) == 0 {
+		return 0
 	}
 
 	return sum / len(grades)
