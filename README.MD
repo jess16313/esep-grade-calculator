@@ -16,3 +16,7 @@ Run unit tests with code coverage:
 cd grade_calculator/
 go test -coverprofile=coverage.txt ./...
 ```
+
+The code exists in the grade_calculator.go 
+file and the tests are in grade_calculator_test.go. 
+The go.mod just identifies the root directory.
